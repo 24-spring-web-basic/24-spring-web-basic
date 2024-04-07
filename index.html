@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.naver.com">네이버</a>
+    <form action="" >
+        <input type="checkbox" required>실명 인증된 아이디로 가입
+        <!-- 아이디 입력 -->
+        <div>
+            <input  type="text" id="id" placeholder="아이디">
+            <div >
+                <span >@naver.com</span>
+            </div>
+        </div>
+
+        <!-- 비밀번호 -->
+        <div >
+            <input type="password" id="password" placeholder="비밀번호">
+            <input type="button" value="비밀번호 보기">
+        </div>
+
+        <!-- email 입력 -->
+        <label for="email">[선택]
+            <input type="text" id="email" placeholder="[선택]이메일주소 (비밀번호 찾기등 본인 확인용)">
+        </label>
+
+        <!-- 이름 입력 -->
+        <div >
+            <input type="text" id="user-name" placeholder="이름">
+        </div>
+
+        <!-- 생일 입력 -->
+        <div >
+            <input  type="text" id="birthday" placeholder="생년월일 8자리">
+        </div>
+        
+        <!-- 통신사 선택 -->
+        <div>
+            <input type="button" id="telecom" value="통신사 선택">
+            <ul>
+                <li><input type="button" value="SKT"></li>
+                <li><input type="button" value="SKT 알뜰폰"></li>
+                <li><input type="button" value="KT"></li>
+                <li><input type="button" value="KT 알뜰폰"></li>
+                <li><input type="button" value="LG U+"></li>
+                <li><input type="button" value="LG U+ 알뜰폰"></li>
+            </ul>
+        </div>
+        <!-- 성별/ 국적 -->
+        <div>
+            <ul>
+                <li><input type="radio">남자</li>
+                <li><input type="radio">여자</li>
+            </ul>
+            <ul>
+                <li><input type="radio">내국인</li>
+                <li><input type="radio">외국인</li>
+            </ul>
+        </div>
+
+        <!-- 전화번호 입력 -->
+        <div>
+            <input type="text" placeholder="휴대전화번호">
+        </div>
+
+        <!-- 약관동의 -->
+        <div>
+            <input type="checkbox" id="agree" required>
+            <label for="agree">[필수] 인증 약관 전체동의</label>
+            <ul>
+                <li>
+                    <input type="checkbox"> 개인정보 이용 
+                    <a href="https://nid.naver.com/user2/common/terms/terms2?t=viewPersonalInfoTerms&v=1">약관 전문보기</a>
+                    
+                </li>
+                <li>
+                    <input type="checkbox"> 고유 식별정보 처리
+                    <a href="https://nid.naver.com/user2/common/terms/terms2?t=viewUniqInfoTerms&v=1">약관 전문보기</a>
+                </li>
+                <li>
+                    <input type="checkbox"> 통신사 이용약관
+                    <a href="https://nid.naver.com/user2/common/terms/terms2?t=viewCellPhoneCarriersTerms&v=1">약관 전문보기</a>
+                </li>
+                <li>
+                    <input type="checkbox"> 인증사 이용약관
+                    <a href="https://nid.naver.com/user2/common/terms/terms2?t=viewServiceTerms&v=1">약관 전문보기</a>
+                </li>
+                <li>
+                    <input type="checkbox"> 네이버 개인정보수집
+                    <a href="https://nid.naver.com/user2/common/terms/terms2?t=viewNaverTerms&v=2">약관 전문보기</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div>
+            <input type="submit" value="인증요청">
+        </div>
+    </form>
+</body>
+</html>
