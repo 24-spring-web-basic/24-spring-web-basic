@@ -1,1 +1,39 @@
-/* 해당 문구를 제거하고, 작성한 코드를 입력해주세요! */
+#logo {
+    width: 100px;
+    margin-right: 130px;
+}
+label[for=checkbox]{
+
+    margin-left: 63px;
+}
+
+center {
+    margin: 0px 150px;
+    font-size: 11px;
+
+}
+
+input[type=text],
+input[type=password] {
+    width: 200px;
+    height: 30px;
+    font-size: 12px;
+}
+
+select {
+    width: 208px;
+    height: 30px;
+}
+
+input[type=submit] {
+    width: 208px;
+    height: 30px;
+    font-size: 20;
+    background-color:
+        chartreuse;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    
+
+}
