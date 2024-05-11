@@ -1,1 +1,60 @@
-/* 해당 문구를 제거하고, 작성한 코드를 입력해주세요! */
+.naver_logo{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 300px;
+    height: 100px;
+}
+
+.first{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width:300px;
+    outline: 0px;
+    font-style: bold;
+    color: rgb(128, 128, 128);
+}
+
+.div{
+    display: flex;
+    flex-direction: row;
+    outline: 1.5px solid;
+}
+
+.in {
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    padding: 0px;
+    border: 0px;
+}
+
+.right {
+    padding-left: 5px; 
+}
+
+input{
+    cursor: pointer;
+}
+
+
+input[type=submit]
+{
+    flex: auto;
+    width: 100%;
+    background-color: inherit;
+}
+
+.gender-nat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 80%;
+}
+.gender-nat > ul{
+    justify-content: space-evenly;
+    margin: 0px;
+    padding: 0px;
+}

@@ -1,0 +1,21 @@
+.firstcheck{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width:400px;
+    outline: 0px;
+}
+.logo{
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;
+    outline: 0px;
+    height: 100px
+}
+.id{
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
