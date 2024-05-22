@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>Comments</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" defer></script>
+{% for comment in comments %}
+<div><Strong>{{comment.user}}</Strong>: {{comment.content}}</div>
+{% endfor %}
+
+<h1>comment 작성</h1>
+내용 <input type="text" name="content">
+<button onclick="handleComment()">작성하기</button>
+<script>
+    function handleComment(){
+        const content = document.querySelector('input[name=content]').value
+        axios({
+            url: '/comment',
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: JSON.stringify({
+                'content': content
+            })
+        }).then((response)=>{
+            document.open();
+            document.write(response.data);
+            document.close();
+        }).catch((error)=>{
+            alert(error.response.data)
+        })
+    }
+    
+    document.querySelector('input').addEventListener('keydown', (e)=>{
+        if (e.key === 'Enter'){
+            handleComment();
+        }
+    })
+</script>
