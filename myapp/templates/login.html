@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+  
+    <h1>Login page</h1>
+    <form method="post" action="/login">
+        ID <input type="text" name="username" />
+        PW <input type="password" name="password" />
+        제출 <input type="submit" />
+    </form>
+    <button onclick="location.href='/signup'" >회원가입</button>
+  
+    {% if error %}
+    <div style="color: red;">{{ error }}</div>
+    {% endif %}
+</body>
+</html>

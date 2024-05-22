@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<title>Hello from Flask</title>
+{% if username %}
+  <h1>Hello {{ username }}!</h1>
+  <button onclick="location.href='/logout'" >로그아웃</button>
+{% else %}
+  <h1>Login please</h1>
+  <button onclick="location.href='/login'" >로그인</button>
+  <button onclick="location.href='/signup'" >회원가입</button>
+{% endif %}
+<button onclick="location.href='/comment'" >글쓰기</button>
