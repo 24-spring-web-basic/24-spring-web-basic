@@ -30,7 +30,18 @@ def signup():
     elif request.method == 'POST':
         # TODO : 회원가입 기능 구현하기
         # db/users.txt 파일에 가입 정보 저장
-        pass
+        req_form = request.form
+        username = req_form['username']
+        password = req_form['password']
+        # 아이디 중복 확인
+        with open('db/users.txt', 'r') as f:
+            for line in f:
+                if username == line.split()[0]:
+                    return render_template('signup.html', error="This ID is already in use.")
+        #db 입력
+        with open('db/users.txt', 'a') as f:
+            f.write("{} {}\n".format(username, password))
+        return redirect(url_for('login'))
 
 
 # 로그인 페이지 및 로그인 api
@@ -43,7 +54,23 @@ def login():
     elif request.method == 'POST':
         # TODO : 로그인 기능 구현하기
         # db/users.txt 파일에 가입 정보 저장
-        pass
+        req_form = request.form
+        username = req_form['username']
+        password = req_form['password']
+        
+        with open('db/users.txt', 'r') as f:
+            for line in f:
+                signed_username, singed_password = line.split()
+                if signed_username != username:
+                    continue
+
+                if(password == singed_password):
+                    session['username'] = username
+                    return redirect(url_for('index'))
+                
+                return render_template('login.html', error="incorrect password.")
+        return render_template('login.html', error="User cannot be found. Please check your ID.")
+
         
 
 # 로그아웃 api
@@ -61,13 +88,28 @@ def handle_comment():
     if request.method == 'GET':
         # TODO : 글 작성 페이지 반환하기
         # db/comments.txt 파일에서 작성된 글 정보 가져오기
-        pass
+        with open('db/comments.txt', 'r') as f:
+            comments = []
+            for line in f:
+                user, content = line.strip().split(' ', 1)
+                comments.append({'user': user, 'content': content})
+            return render_template('comments.html', comments = comments)
+
     
     elif request.method == 'POST':
         # TODO : 글 작성 기능 구현하기
         # db/comments.txt 파일에 작성된 글 정보 저장
-        pass
-                
+        req_body = request.get_json()
+        content = req_body['content']
+        with open('db/comments.txt', 'a') as f:
+            f.write(f"{session.get('username')} {content}\n")
+        
+        with open('db/comments.txt', 'r') as f:
+            comments = []
+            for line in f:
+                user, content = line.strip().split(' ', 1)
+                comments.append({'user': user, 'content': content})
+        return render_template('comments.html', comments=comments)
 
 
 app.debug = True
